@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Desconéctate para conectar: descubre cómo el uso excesivo del celular puede alimentar la procrastinación y aprende hábitos para recuperar tu tiempo y concentración.">
+  <meta name="keywords" content="procrastinación, uso del celular, distracción digital, productividad, concentración, bienestar digital">
+  <meta name="author" content="Proyecto Desconéctate para conectar">
+  <meta name="theme-color" content="#172b4d">
+  <title>Desconéctate para conectar | Recupera tu tiempo</title>
+  <style>
+    :root {
+      --navy:#172b4d; --blue:#477bd1; --sky:#dce9ff; --yellow:#f5c451;
+      --coral:#e87965; --cream:#fbf8f0; --ink:#24334b; --muted:#64748b;
+      --white:#fff; --shadow:0 16px 45px rgba(23,43,77,.10);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+    a{color:inherit}
+    .wrap{width:min(1100px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(251,248,240,.94);backdrop-filter:blur(12px);border-bottom:1px solid #e9e4d8}
+    nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:900;color:var(--navy);letter-spacing:-.04em;text-decoration:none;font-size:1.05rem}
+    .brand span{color:var(--coral)}
+    .navlinks{display:flex;gap:20px;flex-wrap:wrap}
+    .navlinks a{text-decoration:none;color:#43516a;font-size:.9rem;font-weight:700}
+    .navlinks a:hover{color:var(--blue)}
+    .hero{padding:78px 0 68px;background:radial-gradient(circle at 85% 20%,#fff1c8 0 10%,transparent 30%),linear-gradient(135deg,#e5efff,#fbf8f0 68%)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:42px}
+    .eyebrow{display:inline-block;background:#fff;border:1px solid #d9e4f7;color:var(--blue);padding:6px 13px;border-radius:99px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+    h1{font-size:clamp(2.6rem,6vw,5rem);line-height:.98;letter-spacing:-.065em;color:var(--navy);margin:20px 0}
+    h1 em{font-style:normal;color:var(--coral)}
+    .lead{font-size:1.15rem;color:#53627a;max-width:620px}
+    .button{display:inline-block;margin-top:18px;padding:13px 20px;border-radius:13px;background:var(--navy);color:white;text-decoration:none;font-weight:800;box-shadow:var(--shadow)}
+    .hero-art{background:white;padding:14px;border-radius:28px;box-shadow:var(--shadow);transform:rotate(1.5deg)}
+    .hero-art img{width:100%;display:block;border-radius:18px}
+    section{padding:72px 0}
+    .section-head{max-width:700px;margin-bottom:30px}
+    .kicker{color:var(--coral);font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:.76rem}
+    h2{font-size:clamp(2rem,4vw,3rem);line-height:1.08;letter-spacing:-.045em;color:var(--navy);margin:8px 0 14px}
+    h3{color:var(--navy);margin:0 0 8px}
+    .muted{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:white;padding:24px;border-radius:20px;box-shadow:var(--shadow);border:1px solid #eee9df}
+    .icon{width:44px;height:44px;display:grid;place-items:center;background:var(--sky);border-radius:14px;font-size:1.35rem;margin-bottom:14px}
+    .definition{background:var(--navy);color:white;border-radius:24px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}
+    .definition h2{color:white}
+    .definition p{color:#dce6f8}
+    .stat{font-size:2.3rem;font-weight:900;color:var(--yellow);line-height:1}
+    .infographic{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:center}
+    .infographic img{width:100%;max-height:760px;object-fit:contain;background:white;padding:12px;border-radius:20px;box-shadow:var(--shadow)}
+    .media-card{background:white;border:1px solid #eee9df;border-radius:22px;padding:26px;box-shadow:var(--shadow)}
+    .media-placeholder{min-height:190px;border-radius:16px;background:linear-gradient(135deg,#e5efff,#fff1c8);display:grid;place-items:center;text-align:center;padding:25px;color:var(--navy);font-weight:800}
+    .media-placeholder span{font-size:2.5rem;display:block}
+    .video-container{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:16px;background:#172b4d}
+    .video-container iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .steps{counter-reset:step;display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .step{background:white;border-radius:17px;padding:18px;border:1px solid #eee9df}
+    .step:before{counter-increment:step;content:counter(step);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--yellow);color:var(--navy);font-weight:900;margin-bottom:12px}
+    .project-info{background:#fff1c8;border-radius:24px;padding:30px}
+    table{width:100%;border-collapse:collapse;background:white;border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+    th,td{text-align:left;padding:14px 16px;border-bottom:1px solid #eee9df;vertical-align:top}
+    th{background:var(--navy);color:white}
+    tr:last-child td{border-bottom:0}
+    tbody tr:nth-child(even){background:#f7f9fd}
+    tbody tr:hover{background:#fff6df}
+    td:first-child{font-weight:750;color:var(--navy);min-width:145px}
+    .table-note{font-size:.9rem;color:var(--muted);margin:10px 2px 0}
+    .platforms{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .platform{background:white;border-radius:18px;padding:22px;border:1px solid #eee9df}
+    .cta{background:linear-gradient(120deg,var(--blue),var(--navy));color:white;text-align:center;border-radius:28px;padding:45px 25px}
+    .cta h2{color:white}
+    .cta p{color:#e4edff;max-width:650px;margin:0 auto}
+    footer{padding:30px 0;color:var(--muted);font-size:.9rem;border-top:1px solid #e9e4d8}
+    @media(max-width:800px){.hero-grid,.definition,.infographic{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.platforms{grid-template-columns:1fr}.navlinks{display:none}}
+    @media(max-width:480px){.steps{grid-template-columns:1fr}.hero{padding:52px 0}.card{padding:20px}th,td{padding:10px;font-size:.88rem}}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#inicio">DESCONÉCTATE <span>PARA CONECTAR</span></a>
+    <div class="navlinks">
+      <a href="#tema">El problema</a><a href="#infografia">Infografía</a><a href="#video">Video</a><a href="#podcast">Podcast</a><a href="#consejos">Consejos</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Un proyecto sobre bienestar digital</span>
+        <h1>¿Tu celular controla <em>tu tiempo?</em></h1>
+        <p class="lead">Descubre cómo el uso excesivo de los dispositivos móviles puede alimentar la procrastinación, afectar tu concentración y alejarte de tus objetivos.</p>
+        <a class="button" href="#tema">Explorar el proyecto ↓</a>
+      </div>
+      <div class="hero-art">
+        <img src="infografia-desconectate.png" alt="Infografía educativa sobre procrastinación y uso excesivo del celular.">
+      </div>
+    </div>
+  </section>
+
+  <section id="tema">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">01 · Entiende el problema</span>
+        <h2>La distracción que parece durar cinco minutos</h2>
+        <p class="muted">Una revisión rápida del celular puede convertirse en una cadena de notificaciones, videos y redes sociales que interrumpe lo que realmente queríamos hacer.</p>
+      </div>
+      <div class="definition">
+        <div>
+          <span class="kicker" style="color:#f5c451">¿Qué es procrastinar?</span>
+          <h2>Aplazar lo importante para después.</h2>
+          <p>Es posponer una tarea o responsabilidad para realizar otra actividad más entretenida o inmediata, aunque sepamos que luego tendremos menos tiempo.</p>
+        </div>
+        <div>
+          <div class="stat">Tu atención<br>también cuenta.</div>
+          <p>El celular no es el enemigo: el reto está en aprender a utilizarlo con intención y límites.</p>
+        </div>
+      </div>
+      <div class="cards" style="margin-top:20px">
+        <article class="card"><div class="icon">🔔</div><h3>Interrupciones</h3><p class="muted">Las notificaciones pueden cortar el ritmo de estudio o trabajo.</p></article>
+        <article class="card"><div class="icon">⏳</div><h3>Pérdida de tiempo</h3><p class="muted">Un momento de consulta puede alargarse mucho más de lo planeado.</p></article>
+        <article class="card"><div class="icon">📚</div><h3>Tareas aplazadas</h3><p class="muted">Las responsabilidades se acumulan y aumenta la presión por terminarlas.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="infografia" style="background:#f0f4fb">
+    <div class="wrap infographic">
+      <div>
+        <span class="kicker">02 · Pieza visual</span>
+        <h2>La idea en una sola imagen</h2>
+        <p class="muted">Esta infografía resume qué es la procrastinación, cómo influye el celular, cuáles son sus consecuencias y qué acciones ayudan a recuperar la concentración.</p>
+        <a class="button" href="infografia-desconectate.png" target="_blank" rel="noopener">Ver infografía en tamaño completo ↗</a>
+      </div>
+      <img src="infografia-desconectate.png" alt="Infografía: Desconéctate para conectar. Explica la procrastinación, las distracciones digitales, sus consecuencias y cinco consejos para evitarla.">
+    </div>
+  </section>
+
+  <section id="video">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">03 · Pieza audiovisual</span>
+        <h2>Video: recupera el control de tu tiempo</h2>
+        <p class="muted">En tres minutos, acompañamos a un estudiante que se distrae con el celular, reconoce las consecuencias y pone en práctica hábitos para concentrarse.</p>
+      </div>
+      <div class="media-card">
+        <p class="muted"><strong>Duración:</strong> 3 minutos · <strong>Formato:</strong> video educativo con un solo personaje.</p>
+        <p><strong>Enlace del video:</strong> <a href="https://www.youtube.com/watch?v=uG4uCzK6ix4" target="_blank" rel="noopener">Ver video en YouTube ↗</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="podcast" style="background:#f0f4fb">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">04 · Pieza sonora</span>
+        <h2>Podcast: ¿estamos perdiendo nuestro tiempo frente a una pantalla?</h2>
+        <p class="muted">Una conversación individual y reflexiva sobre hábitos digitales, procrastinación y pequeñas decisiones para usar mejor el tiempo.</p>
+      </div>
+      <div class="media-card">
+        <p class="muted"><strong>Duración:</strong> aproximadamente 3 minutos · <strong>Formato:</strong> narración individual.</p>
+        <p><strong>Enlace del podcast:</strong> <a href="https://www.youtube.com/watch?v=-x0YOtecsSQ" target="_blank" rel="noopener">Escuchar podcast en YouTube ↗</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="consejos">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">05 · Pasa a la acción</span>
+        <h2>Cinco hábitos para recuperar tu atención</h2>
+        <p class="muted">No necesitas abandonar la tecnología. Empieza por usarla de una manera más consciente.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Organiza tu tiempo</h3><p class="muted">Define qué tarea harás y cuándo.</p></div>
+        <div class="step"><h3>Silencia avisos</h3><p class="muted">Desactiva notificaciones innecesarias.</p></div>
+        <div class="step"><h3>Aleja el celular</h3><p class="muted">Déjalo fuera de tu alcance al estudiar.</p></div>
+        <div class="step"><h3>Prueba Pomodoro</h3><p class="muted">Trabaja 25 minutos y descansa 5.</p></div>
+        <div class="step"><h3>Prioriza</h3><p class="muted">Comienza por lo más importante.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyecto" style="background:#f0f4fb">
+    <div class="wrap">
+      <div class="project-info">
+        <span class="kicker">06 · Ficha del proyecto</span>
+        <h2>¿Qué queremos comunicar?</h2>
+        <p><strong>Tema central:</strong> la procrastinación y el mal uso de los dispositivos móviles.</p>
+        <p><strong>Público objetivo:</strong> estudiantes y jóvenes que utilizan dispositivos móviles en su vida académica y cotidiana.</p>
+        <p><strong>Mensaje principal:</strong> el celular puede ser una herramienta útil, pero debemos controlar su uso para proteger nuestra concentración y aprovechar nuestro tiempo.</p>
+        <p><strong>Propósito:</strong> informar, sensibilizar y promover hábitos digitales responsables.</p>
+        <p><strong>Identidad:</strong> nombre “Desconéctate para conectar”; colores azul oscuro, azul claro, amarillo, crema y coral; tono cercano, educativo y motivador.</p>
+        <div style="overflow-x:auto;margin-top:24px">
+          <table>
+            <thead><tr><th>Elemento</th><th>Descripción del proyecto</th><th>Cómo se presenta</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Nombre</strong></td><td>Desconéctate para conectar</td><td>Identidad común en la página, infografía, video y podcast.</td></tr>
+              <tr><td><strong>Problemática</strong></td><td>La distracción causada por el uso frecuente del celular y su relación con la procrastinación.</td><td>Ejemplos cotidianos de interrupciones, aplazamiento de tareas y pérdida de concentración.</td></tr>
+              <tr><td><strong>Objetivo general</strong></td><td>Promover un uso consciente del celular para reducir las distracciones y mejorar la gestión del tiempo.</td><td>Información clara y recomendaciones aplicables a la vida diaria.</td></tr>
+              <tr><td><strong>Público objetivo</strong></td><td>Estudiantes y jóvenes usuarios de dispositivos móviles.</td><td>Lenguaje cercano, visual y fácil de comprender.</td></tr>
+              <tr><td><strong>Mensaje clave</strong></td><td>La tecnología debe ser una herramienta y no un obstáculo para nuestras metas.</td><td>“Tu tiempo vale más que una notificación”.</td></tr>
+              <tr><td><strong>Formatos</strong></td><td>Infografía, video educativo, podcast y sitio web.</td><td>Contenido visual, audiovisual, sonoro y escrito.</td></tr>
+              <tr><td><strong>Canal principal</strong></td><td>GitHub Pages</td><td>Centraliza y presenta todas las piezas del proyecto en una página web.</td></tr>
+              <tr><td><strong>Canal complementario</strong></td><td>YouTube</td><td>Aloja el video y el podcast para reproducirlos y compartirlos.</td></tr>
+              <tr><td><strong>Identidad visual</strong></td><td>Azul oscuro, azul claro, amarillo, crema y coral.</td><td>Diseño juvenil, moderno, educativo y coherente entre formatos.</td></tr>
+              <tr><td><strong>Evaluación</strong></td><td>Visualizaciones, reproducciones, visitas, clics e interacción.</td><td>Revisión de estadísticas y comentarios de la audiencia.</td></tr>
+              <tr><td><strong>Resultado esperado</strong></td><td>Mayor conciencia sobre el tiempo en pantalla y adopción de hábitos de concentración.</td><td>Que el público pruebe al menos una estrategia para evitar distracciones.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="seo">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">07 · Visibilidad digital</span>
+        <h2>Optimización para buscadores y accesibilidad</h2>
+        <p class="muted">Elementos sugeridos para que las piezas sean fáciles de encontrar, comprender y compartir.</p>
+      </div>
+      <div style="overflow-x:auto">
+        <table>
+          <thead><tr><th>Contenido</th><th>Título optimizado</th><th>Palabras clave</th><th>Descripción, accesibilidad y acción</th></tr></thead>
+          <tbody>
+            <tr><td>Infografía</td><td>Desconéctate para conectar: cómo evitar la procrastinación</td><td>Procrastinación, distracción digital, celular, concentración</td><td>Texto alternativo descriptivo, texto legible y consejos visuales. Acción: consultar y compartir la infografía.</td></tr>
+            <tr><td>Video</td><td>¿Tu celular controla tu tiempo? | Cómo dejar de procrastinar</td><td>Uso del celular, productividad, hábitos de estudio, gestión del tiempo</td><td>Video educativo con un personaje. Añadir subtítulos y descripción. Acción: ver el video y aplicar un consejo.</td></tr>
+            <tr><td>Podcast</td><td>¿Estamos perdiendo nuestro tiempo frente a una pantalla?</td><td>Bienestar digital, tiempo en pantalla, hábitos digitales</td><td>Audio narrado individualmente. Añadir descripción y transcripción. Acción: escuchar y reflexionar.</td></tr>
+            <tr><td>Página web</td><td>Desconéctate para conectar | Recupera tu tiempo</td><td>Procrastinación, bienestar digital, uso responsable del celular</td><td>Diseño adaptable a móviles, navegación por secciones, enlaces claros y textos alternativos. Acción: explorar todas las piezas.</td></tr>
+          </tbody>
+      </div>
+      <p class="muted"><strong>Hashtags sugeridos:</strong> #DesconéctateParaConectar #Procrastinación #BienestarDigital #Productividad #UsoResponsableDelCelular</p>
+    </div>
+  </section>
+
+  <section id="difusion">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">08 · Publicación y difusión</span>
+        <h2>¿Dónde compartiremos el proyecto?</h2>
+      </div>
+      <div class="platforms">
+        <article class="platform"><h3>🌐 Plataforma principal: GitHub Pages</h3><p class="muted">Es el sitio web central del proyecto. Allí se reúnen la presentación del tema, la infografía, el video, el podcast, los consejos y la ficha informativa.</p><p><strong>Función:</strong> servir como punto de entrada para consultar todo el contenido.</p></article>
+        <article class="platform"><h3>▶️ Canal complementario: YouTube</h3><p class="muted">Es la plataforma donde están publicados el video educativo y el podcast. Permite reproducirlos, compartirlos y acceder a ellos desde la página principal.</p><p><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=uG4uCzK6ix4" target="_blank" rel="noopener">Ver en YouTube ↗</a><br><strong>Podcast:</strong> <a href="https://www.youtube.com/watch?v=-x0YOtecsSQ" target="_blank" rel="noopener">Escuchar en YouTube ↗</a></p></article>
+      </div>
+      <div class="card" style="margin-top:18px">
+        <h3>Plan inicial de difusión</h3>
+        <p><strong>Objetivo:</strong> atraer estudiantes y jóvenes al sitio del proyecto.</p>
+        <p><strong>Audiencia:</strong> estudiantes que usan el celular para estudiar y entretenerse.</p>
+        <p><strong>Mensaje:</strong> “¿Ibas a revisar el celular cinco minutos y terminaste perdiendo una hora? Descubre cómo recuperar tu tiempo”.</p>
+        <p><strong>Momento sugerido:</strong> miércoles a las 6:00 p. m., cuando muchos estudiantes ya han terminado sus clases o actividades principales.</p>
+        <p><strong>Seguimiento:</strong> revisar visualizaciones, interacciones, comentarios y clics al sitio después de 48 horas.</p>
+        <p><strong>Ruta de navegación:</strong> el público llega primero a GitHub Pages y desde allí puede reproducir el video y el podcast alojados en YouTube.</p>
+        <p><strong>Evidencia:</strong> conserva capturas de la página publicada y de los videos disponibles en YouTube para demostrar la difusión.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <span class="eyebrow" style="background:rgba(255,255,255,.14);color:white;border-color:rgba(255,255,255,.25)">El primer paso empieza hoy</span>
+        <h2>Tu tiempo vale más que una notificación.</h2>
+        <p>Usa la tecnología para acercarte a tus metas, no para aplazarlas. Desconéctate un momento de las distracciones y conecta con lo que realmente importa.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>DESCONÉCTATE PARA CONECTAR</strong><br>
+    Proyecto educativo sobre procrastinación y uso responsable de los dispositivos móviles.
+    <p>Contenido audiovisual publicado en YouTube y página principal desarrollada con GitHub Pages.</p>
+  </div>
+</footer>
+</body>
+</html>
